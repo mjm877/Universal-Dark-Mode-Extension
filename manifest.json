@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Universal Dark Mode",
+  "version": "1.0",
+  "description": "Applies dark mode to all websites.",
+  "permissions": ["scripting", "tabs"],
+  "action": {
+    "default_title": "Dark Mode"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["darkmode.js"],
+      "run_at": "document_start"
+    }
+  ]
+}
